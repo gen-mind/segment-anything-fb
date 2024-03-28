@@ -54,6 +54,12 @@ module.exports = {
           loader: "url-loader",
         },
       },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        },
+      },
     ],
   },
   plugins: [
@@ -62,10 +68,6 @@ module.exports = {
         {
           from: "node_modules/onnxruntime-web/dist/*.wasm",
           to: "[name][ext]",
-        },
-        {
-          from: "model",
-          to: "model",
         },
         {
           from: "src/assets",
